@@ -1,0 +1,74 @@
+<html>
+	<head>
+		<title>Mostra</title>
+		<style>
+		body {
+			background-color: rgb(200,200,255);
+		}
+		div.xxxxx {
+			border-style: solid;
+			border-width: 1px;
+			border-color:black;
+		}
+		div.contentor {
+			width : 700px;
+			margin:auto;
+		}
+		div.foto {
+			display:none;
+		}
+		div.foto img{
+			display:block;
+			border-radius:20px;
+			margin:auto;
+		}
+		
+		div.legenda h2 {
+			font-size:40px;
+			text-align: center;
+			background-color:navy;
+			color:yellow;
+			border-style: solid;
+			border-color: black;
+			border-width: 1px;
+			border-radius: 8px;
+			height : 2em;
+		}
+		</style>
+		<script type="text/javascript" language="JavaScript">
+			window.onload = function () {
+				var fotos = document.getElementsByClassName("foto");
+				for (var i=0; i < fotos.length; i++) {
+				  fotos[i].style.display = "none";
+				  var legenda = fotos[i].parentElement.getElementsByClassName("legenda")[0];
+				  legenda.onclick = function() {
+				  	var fotodiv = this.parentElement.getElementsByClassName("foto")[0];
+				  	if 	(fotodiv.style.display == "none") 
+				  		 fotodiv.style.display = "block";
+				  	else fotodiv.style.display =  "none";
+				  }
+				};
+				
+				
+			};
+		</script>
+	</head>
+	<body>
+		<div class="contentor">
+			<div class="legenda">
+				<h2>McLaren F11</h2>
+			</div>
+			<div class="foto"> 
+				<img src="images/mcLaren-f11.jpg" />
+			</div>
+		</div>
+		<div class="contentor">
+			<div class="legenda">
+				<h2>Ferrari 250 GTO</h2>
+			</div>
+			<div class="foto"> 
+				<img src="images/ferrari_250_GTO_side.jpg" />
+			</div>
+		</div>
+	</body>
+</html>
